@@ -60,14 +60,14 @@ export const ResponsiveWrapper = styled.div`
   justify-content: stretched;
   align-items: stretched;
   width: 100%;
-  @media (min-width: 767px) {
+  @media (min-width: 1300px) {
     flex-direction: row;
   }
 `;
 
 export const StyledLogo = styled.img`
   width: 200px;
-  @media (min-width: 767px) {
+  @media (min-width: 1300px) {
     width: 300px;
   }
   transition: width 0.5s;
@@ -80,10 +80,10 @@ export const StyledImg = styled.img`
   background-color: var(--accent);
   border-radius: 100%;
   width: 200px;
-  @media (min-width: 900px) {
+  @media (min-width: 1300px) {
     width: 250px;
   }
-  @media (min-width: 1000px) {
+  @media (min-width: 1300px) {
     width: 300px;
   }
   transition: width 0.5s;
@@ -201,7 +201,7 @@ function App() {
         style={{ padding: 24, backgroundColor: "var(--primary)" }}
         image={CONFIG.SHOW_BACKGROUND ? "/config/images/bg.png" : null}
       >
-        <StyledLogo alt={"logo"} src={"/config/images/logo.png"} />
+        <StyledLogo alt={"logo"} src={"/config/images/logonew.png"} />
         <s.SpacerSmall />
         <ResponsiveWrapper flex={1} style={{ padding: 24 }} test>
           <s.Container flex={1} jc={"center"} ai={"center"}>
@@ -220,6 +220,14 @@ function App() {
               boxShadow: "0px 5px 11px 2px rgba(0,0,0,0.7)",
             }}
           >
+            <s.TextTitle
+                  style={{ textAlign: "center",
+                  fontSize: 80,
+                  fontWeight: "bold",
+                  color: "cyan", }}
+                >
+                  Mint A Fin Now!
+                </s.TextTitle>
             <s.TextTitle
               style={{
                 textAlign: "center",
@@ -260,6 +268,7 @@ function App() {
               </>
             ) : (
               <>
+              
                 <s.TextTitle
                   style={{ textAlign: "center", color: "var(--accent-text)" }}
                 >
@@ -387,8 +396,7 @@ function App() {
             }}
           >
             Please make sure you are connected to the right network (
-            {CONFIG.NETWORK.NAME} Mainnet) and the correct address. Please note:
-            Once you make the purchase, you cannot undo this action.
+            {CONFIG.NETWORK.NAME} Mainnet) and the correct address. 
           </s.TextDescription>
           <s.SpacerSmall />
           <s.TextDescription

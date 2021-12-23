@@ -80,9 +80,9 @@ Next change the theme colors to your liking in the `public/config/theme.css` fil
 
 ```css
 :root {
-  --primary: #ebc908;
+  --primary: #3479E1;
   --primary-text: #1a1a1a;
-  --secondary: #ff1dec;
+  --secondary: #84d5ff;
   --secondary-text: #ffffff;
   --accent: #ffffff;
   --accent-text: #000000;
