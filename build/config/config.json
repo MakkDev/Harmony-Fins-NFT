@@ -1,0 +1,18 @@
+{
+  "CONTRACT_ADDRESS": "0xDbBe5Be31176C8d74869bccC38163b55cBA08382",
+  "SCAN_LINK": "https://explorer.harmony.one/address/0xDbBe5Be31176C8d74869bccC38163b55cBA08382",
+  "NETWORK": {
+    "NAME": "Harmony",
+    "SYMBOL": "ONE",
+    "ID": 1666700000
+  },
+  "NFT_NAME": "Harmony Fins",
+  "SYMBOL": "FIN",
+  "MAX_SUPPLY": 7000,
+  "WEI_COST": 75000000000000000,
+  "DISPLAY_COST": 400,
+  "GAS_LIMIT": 285000,
+  "MARKETPLACE": "The Marketplace",
+  "MARKETPLACE_LINK": "https://the-marketplace.one/assets/0xDbBe5Be31176C8d74869bccC38163b55cBA08382",
+  "SHOW_BACKGROUND": true
+}
