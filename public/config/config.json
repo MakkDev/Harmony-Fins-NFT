@@ -1,10 +1,10 @@
 {
-  "CONTRACT_ADDRESS": "0x827acb09a2dc20e39c9aad7f7190d9bc53534192",
-  "SCAN_LINK": "https://polygonscan.com/token/0x827acb09a2dc20e39c9aad7f7190d9bc53534192",
+  "CONTRACT_ADDRESS": "0xDbBe5Be31176C8d74869bccC38163b55cBA08382",
+  "SCAN_LINK": "https://explorer.harmony.one/address/0xDbBe5Be31176C8d74869bccC38163b55cBA08382",
   "NETWORK": {
     "NAME": "Harmony",
     "SYMBOL": "ONE",
-    "ID": 137
+    "ID": 1666700000
   },
   "NFT_NAME": "Harmony Fins",
   "SYMBOL": "FIN",
@@ -12,7 +12,7 @@
   "WEI_COST": 75000000000000000,
   "DISPLAY_COST": 400,
   "GAS_LIMIT": 285000,
-  "MARKETPLACE": "Opeansea",
-  "MARKETPLACE_LINK": "https://opensea.io/collection/nerdy-coder-clones",
+  "MARKETPLACE": "The Marketplace",
+  "MARKETPLACE_LINK": "https://the-marketplace.one/assets/0xDbBe5Be31176C8d74869bccC38163b55cBA08382",
   "SHOW_BACKGROUND": true
 }
