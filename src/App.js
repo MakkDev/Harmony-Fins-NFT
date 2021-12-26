@@ -145,7 +145,7 @@ function App() {
       .then((receipt) => {
         console.log(receipt);
         setFeedback(
-          `WOW, the ${CONFIG.NFT_NAME} is yours! go visit Opensea.io to view it.`
+          `Hooray! You've successfully minted a Harmony Fin! Head to the-marketplace.one to view it!`
         );
         setClaimingNft(false);
         dispatch(fetchData(blockchain.account));
@@ -277,9 +277,9 @@ function App() {
                 </s.TextTitle>
                 <s.SpacerXSmall />
                 <s.TextDescription
-                  style={{ textAlign: "center", color: "var(--accent-text)" }}
+                  style={{ textAlign: "center", color: "cyan" }} href={CONFIG.MARKETPLACE_LINK} 
                 >
-                  Excluding gas fees.
+                 <a href={CONFIG.MARKETPLACE_LINK} style={{ textAlign: "center", color: "cyan" }} target="_blank"> Visit the-marketplace.one to trade your Harmony Fin. </a>
                 </s.TextDescription>
                 <s.SpacerSmall />
                 {blockchain.account === "" ||
