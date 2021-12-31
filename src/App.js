@@ -382,7 +382,7 @@ function App() {
                     <s.Container ai={"center"} jc={"center"} fd={"row"}>
                       <StyledButton
                         disabled={claimingNft ? 1 : 0}
-                        onClick={(e) => {
+                        onClic={(e) => {
                           e.preventDefault();
                           claimNFTs();
                           getData();
