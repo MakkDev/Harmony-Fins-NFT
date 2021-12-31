@@ -4,6 +4,9 @@ import { connect } from "./redux/blockchain/blockchainActions";
 import { fetchData } from "./redux/data/dataActions";
 import * as s from "./styles/globalStyles";
 import styled from "styled-components";
+import Countdown from 'react-countdown';
+import { toBN } from "C:/Users/amakk/OneDrive/Documents/TestMintApp/hashlips_nft_minting_dapp/node_modules/web3-utils/lib/utils.js";
+var Web3 = require('web3');
 
 const truncate = (input, len) =>
   input.length > len ? `${input.substring(0, len)}...` : input;
@@ -94,6 +97,8 @@ export const StyledLink = styled.a`
   text-decoration: none;
 `;
 
+
+
 function App() {
   const dispatch = useDispatch();
   const blockchain = useSelector((state) => state.blockchain);
@@ -102,28 +107,30 @@ function App() {
   const [feedback, setFeedback] = useState(`Click buy to mint your NFT.`);
   const [mintAmount, setMintAmount] = useState(1);
   const [CONFIG, SET_CONFIG] = useState({
-    CONTRACT_ADDRESS: "",
-    SCAN_LINK: "",
-    NETWORK: {
-      NAME: "",
-      SYMBOL: "",
-      ID: 0,
+    "CONTRACT_ADDRESS": "0x84179036dcd4d9b9f32d8d31C4cE1422b61d537b",
+    "SCAN_LINK": "https://explorer.harmony.one/address/0x84179036dcd4d9b9f32d8d31C4cE1422b61d537b",
+    "NETWORK": {
+      "NAME": "Harmony",
+      "SYMBOL": "ONE",
+      "ID": 1666700000
     },
-    NFT_NAME: "",
-    SYMBOL: "",
-    MAX_SUPPLY: 1,
-    WEI_COST: 0,
-    DISPLAY_COST: 0,
-    GAS_LIMIT: 0,
-    MARKETPLACE: "",
-    MARKETPLACE_LINK: "",
-    SHOW_BACKGROUND: false,
-  });
-
+    "NFT_NAME": "Harmony Fins",
+    "SYMBOL": "FIN",
+    "MAX_SUPPLY": 7000,
+    "WEI_COST": 300000000000000000000,
+    "DISPLAY_COST": 300,
+    "GAS_LIMIT": 285000,
+    "MARKETPLACE": "The-Marketplace.one",
+    "MARKETPLACE_LINK": "https://the-marketplace.one/assets/0x84179036dcd4d9b9f32d8d31C4cE1422b61d537b",
+    "SHOW_BACKGROUND": true
+  }
+  );
+   
+ 
   const claimNFTs = () => {
-    let cost = CONFIG.WEI_COST;
+    let cost = (CONFIG.WEI_COST);
     let gasLimit = CONFIG.GAS_LIMIT;
-    let totalCostWei = String(cost * mintAmount);
+    let totalCostWei = (cost.toString() * mintAmount);
     let totalGasLimit = String(gasLimit * mintAmount);
     console.log("Cost: ", totalCostWei);
     console.log("Gas limit: ", totalGasLimit);
@@ -135,7 +142,7 @@ function App() {
         gasLimit: String(totalGasLimit),
         to: CONFIG.CONTRACT_ADDRESS,
         from: blockchain.account,
-        value: totalCostWei,
+        value: String(totalCostWei),
       })
       .once("error", (err) => {
         console.log(err);
@@ -220,13 +227,27 @@ function App() {
               boxShadow: "0px 5px 11px 2px rgba(0,0,0,0.7)",
             }}
           >
+  
+
             <s.TextTitle
                   style={{ textAlign: "center",
                   fontSize: 80,
                   fontWeight: "bold",
                   color: "cyan", }}
-                >
-                  Mint A Fin Now!
+                  
+                > 
+                  Minting Starts In
+                </s.TextTitle>
+                
+                <s.TextTitle
+                  style={{ textAlign: "center",
+                  fontSize: 80,
+                  fontWeight: "bold",
+                  color: "cyan", }}    
+                > 
+                  
+                  { <Countdown date={`${2022}-01-15T00:00:00`} />}
+                  
                 </s.TextTitle>
             <s.TextTitle
               style={{
@@ -363,7 +384,7 @@ function App() {
                     <s.Container ai={"center"} jc={"center"} fd={"row"}>
                       <StyledButton
                         disabled={claimingNft ? 1 : 0}
-                        onClick={(e) => {
+                        onClic={(e) => {
                           e.preventDefault();
                           claimNFTs();
                           getData();
