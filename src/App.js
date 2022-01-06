@@ -5,6 +5,8 @@ import { fetchData } from "./redux/data/dataActions";
 import * as s from "./styles/globalStyles";
 import styled from "styled-components";
 import Countdown from 'react-countdown';
+import BigNumber from 'bignumber.js'
+
 
 
 const truncate = (input, len) =>
@@ -67,6 +69,9 @@ export const ResponsiveWrapper = styled.div`
   }
 `;
 
+
+
+
 export const StyledLogo = styled.img`
   width: 200px;
   @media (min-width: 1300px) {
@@ -95,6 +100,11 @@ export const StyledLink = styled.a`
   color: var(--secondary);
   text-decoration: none;
 `;
+
+const Web3Utils = require('web3-utils');
+
+
+
 
 
 
@@ -126,9 +136,9 @@ function App() {
    
  
   const claimNFTs = () => {
-    let cost = CONFIG.WEI_COST;
+    let cost = BigNumber(CONFIG.WEI_COST);
     let gasLimit = CONFIG.GAS_LIMIT;
-    let totalCostWei = String(cost * mintAmount);
+    let totalCostWei = BigNumber(cost * mintAmount);
     let totalGasLimit = String(gasLimit * mintAmount);
     console.log("Cost: ", totalCostWei);
     console.log("Gas limit: ", totalGasLimit);
@@ -150,7 +160,7 @@ function App() {
       .then((receipt) => {
         console.log(receipt);
         setFeedback(
-          `Hooray! You've successfully minted a Harmony Fin! Head to the-marketplace.one to view it!`
+          `Hooray! You've successfully minted Harmony Fin ${data.totalSupply - (-1) }! Head to the-marketplace.one to view it!`
         );
         setClaimingNft(false);
         dispatch(fetchData(blockchain.account));
@@ -167,8 +177,8 @@ function App() {
 
   const incrementMintAmount = () => {
     let newMintAmount = mintAmount + 1;
-    if (newMintAmount > 10) {
-      newMintAmount = 10;
+    if (newMintAmount > 100) {
+      newMintAmount = 100;
     }
     setMintAmount(newMintAmount);
   };
@@ -255,7 +265,8 @@ function App() {
                 color: "var(--accent-text)",
               }}
             >
-              {data.totalSupply} / {CONFIG.MAX_SUPPLY}
+              
+              0 / {CONFIG.MAX_SUPPLY}
             </s.TextTitle>
             <s.TextDescription
               style={{
