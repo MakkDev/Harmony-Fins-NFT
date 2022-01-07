@@ -451,7 +451,7 @@ function App() {
             <SocialIcon url="https://discord.gg/4hKjPr4cjt"  style={{
               bottom: "10px",
             }} />
-            <SocialIcon url="https://tranquilfinance.medium.com/" style={{
+            <SocialIcon url="https://medium.com/" style={{
               left: "25px",
               bottom: "10px",
             }}  />
