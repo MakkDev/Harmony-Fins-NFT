@@ -1,6 +1,6 @@
 {
-  "CONTRACT_ADDRESS": "0xCc7FeB9c1938021a835105982bdEf53c87C1BDd8",
-  "SCAN_LINK": "https://explorer.harmony.one/address/0xCc7FeB9c1938021a835105982bdEf53c87C1BDd8",
+  "CONTRACT_ADDRESS": "0x10C4Ba7cd73bF8795a0484390cFe4500575D642D",
+  "SCAN_LINK": "https://explorer.harmony.one/address/0x10C4Ba7cd73bF8795a0484390cFe4500575D642D",
   "NETWORK": {
     "NAME": "Harmony",
     "SYMBOL": "ONE",
@@ -13,6 +13,6 @@
   "DISPLAY_COST": 350,
   "GAS_LIMIT": 285000,
   "MARKETPLACE": "The Marketplace",
-  "MARKETPLACE_LINK": "https://the-marketplace.one/assets/0xCc7FeB9c1938021a835105982bdEf53c87C1BDd8",
+  "MARKETPLACE_LINK": "https://the-marketplace.one/assets/0x10C4Ba7cd73bF8795a0484390cFe4500575D642D",
   "SHOW_BACKGROUND": true
 }

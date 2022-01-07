@@ -5,7 +5,10 @@ import { fetchData } from "./redux/data/dataActions";
 import * as s from "./styles/globalStyles";
 import styled from "styled-components";
 import Countdown from 'react-countdown';
-import BigNumber from 'bignumber.js'
+import BigNumber from 'bignumber.js';
+import { SocialIcon } from 'react-social-icons';
+
+
 
 
 
@@ -213,15 +216,17 @@ function App() {
       <s.Container
         flex={1}
         ai={"center"}
-        style={{ padding: 24, backgroundColor: "var(--primary)" }}
+        style={{ padding: 5, backgroundColor: "var(--primary)" }}
         image={CONFIG.SHOW_BACKGROUND ? "/config/images/bg.png" : null}
       >
+        
         <StyledLogo alt={"logo"} src={"/config/images/logonew.png"} />
         <s.SpacerSmall />
-        <ResponsiveWrapper flex={1} style={{ padding: 24 }} test>
+        <ResponsiveWrapper flex={1} style={{ padding: 5 }} test>
           <s.Container flex={1} jc={"center"} ai={"center"}>
             <StyledImg alt={"example"} src={"/config/images/example.gif"} />
           </s.Container>
+          
           <s.SpacerLarge />
           <s.Container
             flex={2}
@@ -229,7 +234,7 @@ function App() {
             ai={"center"}
             style={{
               backgroundColor: "var(--accent)",
-              padding: 24,
+              padding: 10,
               borderRadius: 24,
               border: "4px dashed var(--secondary)",
               boxShadow: "0px 5px 11px 2px rgba(0,0,0,0.7)",
@@ -418,27 +423,42 @@ function App() {
           </s.Container>
         </ResponsiveWrapper>
         <s.SpacerMedium />
-        <s.Container jc={"center"} ai={"center"} style={{ width: "70%" }}>
+        <s.Container jc={"center"} ai={"center"} style={{ width: "70%"}}>
           <s.TextDescription
             style={{
               textAlign: "center",
               color: "var(--primary-text)",
+              fontSize: "30px",
+              fontFamily: "unset",  
+              
             }}
           >
-            Please make sure you are connected to the right network (
-            {CONFIG.NETWORK.NAME} Mainnet) and the correct address. 
+            Learn More About Harmony Fins!  
           </s.TextDescription>
           <s.SpacerSmall />
           <s.TextDescription
             style={{
               textAlign: "center",
               color: "var(--primary-text)",
+              fontSize: "25px",
+              bottom: "10px",
             }}
-          >
-            We have set the gas limit to {CONFIG.GAS_LIMIT} for the contract to
-            successfully mint your NFT. We recommend that you don't lower the
-            gas limit.
+          > 
+             <SocialIcon url="https://twitter.com/FinsHarmony" style={{
+              left: "-25px",
+              bottom: "10px",
+            }} /> 
+            <SocialIcon url="https://discord.gg/4hKjPr4cjt"  style={{
+              bottom: "10px",
+            }} />
+            <SocialIcon url="https://tranquilfinance.medium.com/" style={{
+              left: "25px",
+              bottom: "10px",
+            }}  />
+             
           </s.TextDescription>
+  
+   
         </s.Container>
       </s.Container>
     </s.Screen>
