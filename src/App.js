@@ -259,7 +259,7 @@ function App() {
                   color: "cyan", }}    
                 > 
                   
-                  { <Countdown date={`${2022}-01-15T00:00:00`} />}
+                  { <Countdown date={`${2022}-01-15T13:00:00`} />}
                   
                 </s.TextTitle>
             <s.TextTitle
@@ -444,14 +444,14 @@ function App() {
               bottom: "10px",
             }}
           > 
-             <SocialIcon url="https://twitter.com/FinsHarmony" style={{
+             <SocialIcon url="https://twitter.com/FinsHarmony" target="_blank" style={{
               left: "-25px",
               bottom: "10px",
             }} /> 
-            <SocialIcon url="https://discord.gg/4hKjPr4cjt"  style={{
+            <SocialIcon url="https://discord.gg/4hKjPr4cjt" target="_blank"  style={{
               bottom: "10px",
             }} />
-            <SocialIcon url="https://medium.com/" style={{
+            <SocialIcon url="https://medium.com/@harmonyfins?p=9ce22cdf7694" target="_blank" style={{
               left: "25px",
               bottom: "10px",
             }}  />
