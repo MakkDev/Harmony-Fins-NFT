@@ -249,19 +249,10 @@ function App() {
                   color: "cyan", }}
                   
                 > 
-                  Minting Starts In
+                  Mint A Fin Now!
                 </s.TextTitle>
                 
-                <s.TextTitle
-                  style={{ textAlign: "center",
-                  fontSize: 80,
-                  fontWeight: "bold",
-                  color: "cyan", }}    
-                > 
-                  
-                  { <Countdown date={`${2022}-01-15T13:00:00`} />}
-                  
-                </s.TextTitle>
+                
             <s.TextTitle
               style={{
                 textAlign: "center",
@@ -271,7 +262,7 @@ function App() {
               }}
             >
               
-              0 / {CONFIG.MAX_SUPPLY}
+              {data.totalSupply} / {CONFIG.MAX_SUPPLY}
             </s.TextTitle>
             <s.TextDescription
               style={{
@@ -398,7 +389,7 @@ function App() {
                     <s.Container ai={"center"} jc={"center"} fd={"row"}>
                       <StyledButton
                         disabled={claimingNft ? 1 : 0}
-                        onClic={(e) => {
+                        onClick={(e) => {
                           e.preventDefault();
                           claimNFTs();
                           getData();
