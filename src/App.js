@@ -225,6 +225,7 @@ function App() {
         <ResponsiveWrapper flex={1} style={{ padding: 5 }} test>
           <s.Container flex={1} jc={"center"} ai={"center"}>
             <StyledImg alt={"example"} src={"/config/images/example.gif"} />
+           
           </s.Container>
           
           <s.SpacerLarge />
@@ -402,7 +403,11 @@ function App() {
                 )}
               </>
             )}
+            
             <s.SpacerMedium />
+            <s.TextDescription>
+                 <a href="https://medium.com/@harmonyfins/how-to-view-sell-your-harmony-fin-af40fd42df96" style={{ textAlign: "center", color: "white" }} target="_blank"> Can't View Your Fin? Read This. </a>
+                </s.TextDescription>
           </s.Container>
           <s.SpacerLarge />
           <s.Container flex={1} jc={"center"} ai={"center"}>
