@@ -7,6 +7,8 @@ import styled from "styled-components";
 import Countdown from 'react-countdown';
 import BigNumber from 'bignumber.js';
 import { SocialIcon } from 'react-social-icons';
+import TopBar from "./components/topbar/TopBar";
+import "./styles/app.css"
 
 
 
@@ -116,7 +118,7 @@ function App() {
   const blockchain = useSelector((state) => state.blockchain);
   const data = useSelector((state) => state.data);
   const [claimingNft, setClaimingNft] = useState(false);
-  const [feedback, setFeedback] = useState(`Click buy to mint your NFT.`);
+  const [feedback, setFeedback] = useState(``);
   const [mintAmount, setMintAmount] = useState(1);
   const [CONFIG, SET_CONFIG] = useState({
     CONTRACT_ADDRESS: "",
@@ -213,14 +215,14 @@ function App() {
 
   return (
     <s.Screen>
-      <s.Container
+      <s.Container 
         flex={1}
         ai={"center"}
         style={{ padding: 5, backgroundColor: "var(--primary)" }}
-        image={CONFIG.SHOW_BACKGROUND ? "/config/images/bg.png" : null}
+        image= {CONFIG.SHOW_BACKGROUND ? "/config/images/bg.png" : null}
       >
-        
-        <StyledLogo alt={"logo"} src={"/config/images/logonew.png"} />
+        <TopBar/>
+
         <s.SpacerSmall />
         <ResponsiveWrapper flex={1} style={{ padding: 5 }} test>
           <s.Container flex={1} jc={"center"} ai={"center"}>
@@ -242,12 +244,15 @@ function App() {
             }}
           >
   
+  
 
             <s.TextTitle
                   style={{ textAlign: "center",
-                  fontSize: 80,
+                  fontSize: 90,
                   fontWeight: "bold",
-                  color: "cyan", }}
+                  color: "cyan",
+                  
+                }}
                   
                 > 
                   Mint A Fin Now!
@@ -297,16 +302,16 @@ function App() {
               <>
               
                 <s.TextTitle
-                  style={{ textAlign: "center", color: "var(--accent-text)" }}
+                  style={{ fontFamily: 'Josefin Sans, sans-serif', fontSize: 35, textAlign: "center", color: "var(--accent-text)" }}
                 >
                   1 {CONFIG.SYMBOL} costs {CONFIG.DISPLAY_COST}{" "}
-                  {CONFIG.NETWORK.SYMBOL}.
+                  {CONFIG.NETWORK.SYMBOL}
                 </s.TextTitle>
                 <s.SpacerXSmall />
                 <s.TextDescription
                   style={{ textAlign: "center", color: "cyan" }} href={CONFIG.MARKETPLACE_LINK} 
                 >
-                 <a href={CONFIG.MARKETPLACE_LINK} style={{ textAlign: "center", color: "cyan" }} target="_blank"> Visit the-marketplace.one to trade your Harmony Fin. </a>
+                 
                 </s.TextDescription>
                 <s.SpacerSmall />
                 {blockchain.account === "" ||
@@ -357,7 +362,7 @@ function App() {
                     <s.SpacerMedium />
                     <s.Container ai={"center"} jc={"center"} fd={"row"}>
                       <StyledRoundButton
-                        style={{ lineHeight: 0.4 }}
+                        style={{ lineHeight: 0.4, width: 40, height: 40 }}
                         disabled={claimingNft ? 1 : 0}
                         onClick={(e) => {
                           e.preventDefault();
@@ -368,7 +373,8 @@ function App() {
                       </StyledRoundButton>
                       <s.SpacerMedium />
                       <s.TextDescription
-                        style={{
+                        style={{ 
+                          fontSize: 32,
                           textAlign: "center",
                           color: "var(--accent-text)",
                         }}
@@ -377,6 +383,7 @@ function App() {
                       </s.TextDescription>
                       <s.SpacerMedium />
                       <StyledRoundButton
+                        style={{ lineHeight: 0.4, width: 40, height: 40 }}
                         disabled={claimingNft ? 1 : 0}
                         onClick={(e) => {
                           e.preventDefault();
