@@ -248,7 +248,7 @@ function App() {
   
   
 
-            <s.TextTitle
+            <s.TextTitle className="mainTitle"
                   style={{ textAlign: "center",
                   fontSize: 90,
                   fontWeight: "bold",
