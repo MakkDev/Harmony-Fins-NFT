@@ -224,7 +224,9 @@ function App() {
         <TopBar/>
 
         <s.SpacerSmall />
+        
         <ResponsiveWrapper flex={1} style={{ padding: 5 }} test>
+          
           <s.Container flex={1} jc={"center"} ai={"center"}>
             <StyledImg alt={"example"} src={"/config/images/example.gif"} />
            

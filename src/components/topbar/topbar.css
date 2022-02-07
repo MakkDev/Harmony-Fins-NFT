@@ -8,9 +8,9 @@
     font-family: 'Josefin Sans', sans-serif;
     background-color: rgba(0, 255, 255, 0.815);
     margin-top: -5px; 
-    margin-bottom: 45px;  
+    margin-bottom: 45px;
+      
 }
-
 .topLeft {
     flex: 20%;
     display: flex;
@@ -71,6 +71,15 @@
     
 }
 
+.topListItemHome{
+    margin: 18px;
+    cursor: pointer;
+    text-decoration: none;
+    color: #444;
+    font-weight: 370;
+    font-size: larger;
+}
+
 .topListItem{
     margin: 18px;
     cursor: pointer;
@@ -87,10 +96,65 @@
     padding: 10px;
     
 }
+.topListItemHome:hover{
+    background-color: white;
+    border-radius: 10px;
+    transform: scale(1.2);
+    padding: 10px;
+    
+}
 
 .topRightImg{
     width: 30px;
     height: 30px;
     margin-right: 10px;
     margin-bottom: 3px;
+}
+
+
+
+@media screen and (max-width:800px) {
+    .top{
+        width: 103%;
+        margin-right: 0px;
+        
+    }
+
+    .topListItem{
+        font-size: 12px;
+        margin: 6px;
+        margin-left: 3px;
+    }
+
+    .topImg{
+        width: 120px;
+        height: 65px;
+        margin-right: 0px;
+    }
+
+    .topRight{
+        display: none;
+    }
+}
+
+@media screen and (min-width:801px) and (max-width:1200px) {
+    .top{
+        width: 103%;
+        margin-right: 0px;
+        
+    }
+
+    .topListItem{
+        font-size: 20px;
+       
+    }
+
+    .topImg{
+        width: 120px;
+        height: 65px;
+    }
+
+    .topRight{
+        display: none;
+    }
 }
