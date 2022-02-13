@@ -1,4 +1,5 @@
 import React, { useEffect, useState, useRef } from "react";
+import { Route, Routes, } from 'react-router-dom';
 import { useDispatch, useSelector } from "react-redux";
 import { connect } from "./redux/blockchain/blockchainActions";
 import { fetchData } from "./redux/data/dataActions";
@@ -9,6 +10,7 @@ import BigNumber from 'bignumber.js';
 import { SocialIcon } from 'react-social-icons';
 import TopBar from "./components/topbar/TopBar";
 import "./styles/app.css"
+import UserNFT from "./pages/userNFTs/UserNFT";
 
 
 
@@ -118,7 +120,7 @@ function App() {
   const blockchain = useSelector((state) => state.blockchain);
   const data = useSelector((state) => state.data);
   const [claimingNft, setClaimingNft] = useState(false);
-  const [feedback, setFeedback] = useState(``);
+  const [feedback, setFeedback] = useState(`Head To The Marketplace To View Your Fin!`);
   const [mintAmount, setMintAmount] = useState(1);
   const [CONFIG, SET_CONFIG] = useState({
     CONTRACT_ADDRESS: "",
@@ -165,7 +167,7 @@ function App() {
       .then((receipt) => {
         console.log(receipt);
         setFeedback(
-          `Hooray! You've successfully minted Harmony Fin ${data.totalSupply - (-1) }! Head to the-marketplace.one to view it!`
+          `Hooray! You've successfully minted Harmony Fin ${data.totalSupply - (-1) }! Head to tofuNFT.com to view it!`
         );
         setClaimingNft(false);
         dispatch(fetchData(blockchain.account));
@@ -214,6 +216,7 @@ function App() {
   }, [blockchain.account]);
 
   return (
+    
     <s.Screen>
       <s.Container 
         flex={1}
@@ -356,7 +359,8 @@ function App() {
                     <s.TextDescription
                       style={{
                         textAlign: "center",
-                        color: "var(--accent-text)",
+                        color: "cyan",
+                        fontSize: "18px",
                       }}
                     >
                       {feedback}
@@ -415,7 +419,7 @@ function App() {
             
             <s.SpacerMedium />
             <s.TextDescription>
-                 <a href="https://medium.com/@harmonyfins/how-to-view-sell-your-harmony-fin-af40fd42df96" style={{ textAlign: "center", color: "white" }} target="_blank"> Can't View Your Fin? Read This. </a>
+                 <a href="https://medium.com/@harmonyfins/how-to-view-sell-your-harmony-fin-cfa2c5e18f95" style={{ textAlign: "center", color: "white" }} target="_blank"> Can't View Your Fin? Read This. </a>
                 </s.TextDescription>
           </s.Container>
           <s.SpacerLarge />
@@ -467,7 +471,12 @@ function App() {
         </s.Container>
       </s.Container>
     </s.Screen>
+    
+    
+  
   );
 }
+
+
 
 export default App;

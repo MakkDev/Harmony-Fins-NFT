@@ -30,7 +30,7 @@ export default function TopBar() {
         <div className="topCenter"> 
             <ul className="topCenterList">
                 <a className="topListItem">HOME</a>
-                <a href="https://the-marketplace.one/assets/0x10C4Ba7cd73bF8795a0484390cFe4500575D642D" target="_blank"  className="topListItem">MARKETPLACE</a>
+                <a href="https://tofunft.com/discover/items?contracts=12648&network=1666600000" target="_blank"  className="topListItem">MARKETPLACE</a>
                 <a href="https://medium.com/@harmonyfins?p=9ce22cdf7694" target="_blank"  className="topListItem">ABOUT</a>
                 <a href="https://twitter.com/FinsHarmony" target="_blank"  className="topListItem">CONTACT</a>
                 
