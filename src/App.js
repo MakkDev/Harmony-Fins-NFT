@@ -356,15 +356,17 @@ function App() {
                   </s.Container>
                 ) : (
                   <>
-                    <s.TextDescription
+                  <a href="https://tofunft.com/collection/harmony-fins/items">
+                    <s.TextDescription 
                       style={{
                         textAlign: "center",
                         color: "cyan",
                         fontSize: "18px",
+                        textDecoration: "underline",
                       }}
                     >
                       {feedback}
-                    </s.TextDescription>
+                    </s.TextDescription> </a>
                     <s.SpacerMedium />
                     <s.Container ai={"center"} jc={"center"} fd={"row"}>
                       <StyledRoundButton
