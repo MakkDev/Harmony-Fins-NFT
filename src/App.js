@@ -273,7 +273,6 @@ function App() {
               }}
             >
                  {16} / {CONFIG.MAX_SUPPLY}           
-//               {data.totalSupply} / {CONFIG.MAX_SUPPLY}
             </s.TextTitle>
             <s.TextDescription
               style={{
